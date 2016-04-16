@@ -15,7 +15,6 @@ class Caesar:
         uppercase_decode = {self.alphabet[i].upper():self.alphabet[(i-key)%len(self.alphabet)].upper() for i in range(len(self.alphabet))}
         self._decode = dict(lowercase_decode)  
         self._decode.update(uppercase_decode)
-        # FIXME
 
     def encode(self, line):
         if len(line) == 1:
@@ -24,7 +23,6 @@ class Caesar:
             return ''.join([self.encode(char) for char in line])
 
     def decode(self, line):
-        pass  # FIXME
         if len(line) == 1:
             return self._decode[line] if line in self._decode else line
         else:
